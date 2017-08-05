@@ -17,11 +17,13 @@
 				<label for="exampleInputEmail1">Email address</label>
 				<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
 			</div>
-			{% for fighter in fighters %}
 			<div class="radio">
-				<label><input type="radio" value={{fighter.id}} name="fighter">{{fighter.name}}</label>
-			</div>
+			{% for fighter in fighters %}
+				<label><input type="radio" value={{fighter.id}} name="fighter">
+					<img src="{{ url_for('static', filename='images/'~fighter.name~'.jpg') }}" alt="{{fighter.name}}">
+					{{fighter.name}}</label>
 			{% endfor %}
+			</div>
 			<button type="submit" class="btn btn-default">Submit</button>
 		</form>
 	</body>
