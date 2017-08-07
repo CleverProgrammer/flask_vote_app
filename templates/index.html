@@ -13,11 +13,18 @@
 	<body>
 		<div class="container">
 			<h1>Who Will Win!?</h1>
+
+            {% if message %}
+                <div class="alert alert-{{ message_level }}">
+                  {{ message }}
+                </div>
+            {% endif %}
+
 			<form class="form-horizontal" method="post">
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="exampleInputEmail1">Email Address</label>
 					<div class="col-sm-10">
-						<input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email">
+						<input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
 					</div>
 				</div>
 
@@ -26,7 +33,7 @@
                         {% for fighter in fighters %}
                             <div class="fighter-choice">
                                 <label class="radio-inline" for="fighter{{ fighter.id }}">
-                                    <input type="radio" value={{ fighter.id }} id="fighter{{ fighter.id }}" name="fighter">
+                                    <input type="radio" value={{ fighter.id }} id="fighter{{ fighter.id }}" name="fighter" required>
                                     {{ fighter.name }}
                                     <br>
                                     <img src="{{ url_for('static', filename='images/'~fighter.name~'.jpg') }}"
