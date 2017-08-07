@@ -23,7 +23,7 @@
 			<form class="form-horizontal" method="post">
 				<div class="form-group">
 					<label class="control-label col-sm-2" for="exampleInputEmail1">Email Address</label>
-					<div class="col-sm-10">
+					<div class="col-sm-8">
 						<input type="email" name="email" class="form-control" id="exampleInputEmail1" placeholder="Email" required>
 					</div>
 				</div>
@@ -50,6 +50,27 @@
                     </div>
                 </div>
             </form>
+
+            <br>
+
+            <div class="col-sm-offset-2 col-sm-8">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Votes so far</div>
+                    <div class="panel-body">
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" aria-valuenow="{{ vote_counts[0][1] }}"
+                                 aria-valuemin="0" aria-valuemax="{{ total_votes }}"
+                                 style="width:{{ vote_counts[0][1] * 100/total_votes }}%">
+                                <span class="sr-only">70% Complete</span>
+                            </div>
+                        </div>
+                        <div>
+                            <span>{{ fighters[0].name }}</span>
+                            <span class="pull-right">{{ fighters[1].name }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </body>
 </html>
