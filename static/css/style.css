@@ -4,4 +4,20 @@ body {
 
 .radio img {
     width: 200px;
+    margin-left: -20px;
+    margin-top: 6px;
+    border-radius: 4px;
+}
+
+.radio img:hover {
+    border: 1px blue solid;
+}
+
+.radio label {
+    font-weight: bold;
+}
+
+.fighter-choice {
+    float: left;
+    padding-right: 30px;
 }
