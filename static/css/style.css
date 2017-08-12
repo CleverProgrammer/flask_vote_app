@@ -2,6 +2,10 @@ body {
     font-family: 'Consolas', 'Deja Vu Sans Mono', 'Bitstream Vera Sans Mono', monospace;
 }
 
+.progress {
+background-color: #d9534f;
+}
+
 .radio img {
     width: 200px;
     margin-left: -20px;
